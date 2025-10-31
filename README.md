@@ -1,3 +1,2 @@
-# nestjs-testcase
-test cases with nestjs
-# Jest-basics
+# Jest basics
+test basics with jest

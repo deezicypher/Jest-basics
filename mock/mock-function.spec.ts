@@ -20,5 +20,16 @@ describe('Mockk function examples', ()=>{
         ))
         expect(mockCreateSong({title:'Time'})).toEqual({title:'Time',id:1})
     })
+
+    it('should create a mock function with a promise', () => {
+        const mockFetchSongs = jest.fn();
+        mockFetchSongs.mockResolvedValue({id:1,title:"God's plan"})
+        mockFetchSongs().then((result) => {
+            console.log(result);
+        })
+
+        expect(mockFetchSongs).toHaveBeenCalled()
+        expect(mockFetchSongs()).resolves.toEqual({id:1,title:"God's plan"})
+    })
 })
 
